@@ -1,11 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TicketDesk – About</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../CSS/about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
+
 <body>
-    
+  <div class="naviga">
+      <a href="ticket-list.html" class="text-primary">Tickets</a>
+      <span class="mx-1">›</span>
+      <span>Report</span>
+    </div>
+  <div class="page-wrapper">
+    <div class="content-area">
+      <div class="arrow-nav">
+        <div class="arrow active" onclick="showSection('overview', this)">
+          Overview
+        </div>
+        <div class="arrow" onclick="showSection('modules', this)">Login</div>
+        <div class="arrow" onclick="showSection('workflow', this)">
+          Ticket List
+        </div>
+        <div class="arrow" onclick="showSection('tech', this)">
+          TicketCreate
+        </div>
+        <div class="arrow" onclick="showSection('team', this)">
+          Ticket Edit
+        </div>
+        <div class="arrow" onclick="showSection('Dashboard', this)">
+          Dashboard
+        </div>
+        <div class="arrow" onclick="showSection('snow', this)">SNOW</div>
+      </div>
+
+      <div class="content-box">
+        <div id="overview" class="section active">
+          <h2 data-aos="fade-right">Complete Overview / Service Desk</h2>
+
+          <div class="login-section">
+            <div class="boxA">
+              <div class="image-layout-flex">
+                <div class="row top-row">
+                  <img src="Film-41.png" data-aos="fade-right" />
+                  <img src="Frame-1.png" data-aos="fade-right" />
+                  <img src="Frame-2.png" data-aos="fade-right" />
+                </div>
+                <div class="row bottom-row">
+                  <img src="Frame-3.png" data-aos="fade-right" />
+                  <img src="Report.jpeg" data-aos="fade-right" />
+                </div>
+              </div>
+
+              <p data-aos="fade-up">
+                The TicketDesk project is a web-based Service Desk / Ticket
+                Management System designed to simplify the process of
+                reporting, tracking, and resolving IT-related issues. The
+                system provides a centralized platform where users can raise
+                support tickets, monitor their status, and communicate
+                effectively with the support team. Inspired by real-world ITSM
+                tools like ServiceNow, TicketDesk focuses on usability,
+                clarity, and structured workflow to ensure efficient issue
+                management.
+              </p>
+              <br />
+
+              <div style="display: flex; flex-direction: column; gap: 20px">
+                <div data-aos="fade-right" class="step-row">
+                  <div class="num-circle">1</div>
+                  <p>
+                    <strong>Centralized Ticket Management System</strong>
+                    TicketDesk provides a single, unified platform for users
+                    to create, view, and manage all their support tickets.
+                    This eliminates scattered communication and ensures every
+                    issue is properly recorded, tracked, and resolved within
+                    the system.
+                  </p>
+                </div>
+
+                <div data-aos="fade-right" class="step-row">
+                  <div class="num-circle">2</div>
+                  <p>
+                    <strong>User-Friendly Ticket Creation Process</strong> The
+                    system allows users to raise tickets through a simple and
+                    structured form. Fields such as short description,
+                    detailed description, priority, category, and contact type
+                    ensure that complete and accurate information is captured
+                    for faster issue resolution.
+                  </p>
+                </div>
+
+                <div data-aos="fade-right" class="step-row">
+                  <div class="num-circle">3</div>
+                  <p>
+                    <strong>End-to-End Incident Workflow</strong> TicketDesk
+                    follows a clear incident lifecycle, starting from ticket
+                    creation and moving through assignment, in-progress
+                    handling, and final resolution. This structured workflow
+                    improves transparency and helps both users and support
+                    teams understand the current status of each ticket.
+                  </p>
+                </div>
+
+                <div data-aos="fade-right" class="step-row">
+                  <div class="num-circle">4</div>
+                  <p>
+                    <strong>Search and Filtering Capabilities</strong> Users
+                    can quickly locate tickets using the search bar and apply
+                    filters based on priority and state. These features
+                    significantly reduce the time spent navigating large
+                    ticket lists and improve productivity. Priority and
+                    State-Based Management Tickets can be categorized by
+                    urgency and current status, allowing critical issues to be
+                    addressed first. This ensures efficient resource
+                    allocation and aligns the system with IT Service
+                    Management (ITSM) best practices.
+                  </p>
+                </div>
+
+                <div data-aos="fade-right" class="step-row">
+                  <div class="num-circle">5</div>
+                  <p>
+                    <strong>Dashboard-Oriented Interface </strong> The
+                    dashboard provides a clear overview of ticket activity and
+                    system usage. When no tickets are available, the system
+                    displays helpful guidance to encourage users to create
+                    their first ticket, improving onboarding and
+                    usability.system by creating their first support request.
+                  </p>
+                </div> <br><br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="modules" class="section">
+          <h2 data-aos="fade-right">Login Page</h2>
+          <div class="boxA">
+            <img src="Film-4.png" style="width: 100%" data-aos="zoom-in" />
+
+            <div style="display: flex; flex-direction: column; gap: 20px">
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">1</div>
+                <p></p>
+                <p>
+                  Full Name Input Field This field is where users enter their
+                  complete name. It helps to identify the person submitting or
+                  registering on the portal, ensuring personalized
+                  communication and tracking of their tickets.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">2</div>
+                <p>
+                  Email Input Field Users provide their email address here.
+                  This is essential for account verification, receiving ticket
+                  updates, and communication from support staff.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">3</div>
+                <p>
+                  Password Input Field This field is used to set a secure
+                  password when creating an account. It ensures that user data
+                  and tickets are protected and accessible only by authorized
+                  users.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">4</div>
+                <p>
+                  Enter Portal Button This button submits the login form. Upon
+                  clicking, the system validates the provided information and
+                  grants access to the portal based on user credentials and
+                  role.
+                </p>
+              </div>
+            </div>
+
+            <h2 data-aos="fade-right">Register Page</h2>
+            <img src="regi.png" style="width: 100%" data-aos="zoom-in" />
+
+            <div style="display: flex; flex-direction: column; gap: 20px">
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">1</div>
+                <p>
+                  Full Name Input Field This field is where users enter their
+                  complete name. It helps to identify the person submitting or
+                  registering on the portal, ensuring personalized
+                  communication and tracking of their tickets.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">2</div>
+                <p>
+                  Email Input Field Users provide their email address here.
+                  This is essential for account verification, receiving ticket
+                  updates, and communication from support staff.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">3</div>
+                <p>
+                  Password Input Field This field is used to set a secure
+                  password when creating an account. It ensures that user data
+                  and tickets are protected and accessible only by authorized
+                  users.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">4</div>
+                <p>
+                  Confirm Password Input Field This field is used to confirm
+                  the password entered in the previous field. It helps prevent
+                  typos and ensures that the user has entered their desired
+                  password correctly.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">5</div>
+                <p>
+                  Department Input Field Users select their department from
+                  this dropdown or input field. This helps categorize tickets
+                  based on organizational structure, allowing for targeted
+                  support and efficient routing.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">6</div>
+                <p>
+                  Role Input Field Users select their role from this dropdown
+                  or input field. This helps determine the permissions and
+                  access levels within the portal, ensuring appropriate
+                  control over ticket management and system features.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">7</div>
+                <p>
+                  Login Link If users already have an account, they can click
+                  this link to navigate to the login page instead of creating
+                  a new account.
+                </p>
+              </div>
+              <div data-aos="fade-right" class="step-row">
+                <div class="num-circle">8</div>
+                <p>
+                  Register Button This submits the registration form and
+                  creates the user account. It validates all input fields
+                  before allowing registration.
+                </p>
+              </div> <br>
+            </div>
+          </div>
+        </div>
+
+        <div id="workflow" class="section">
+          <h2 data-aos="fade-right">Tickets Dashboard</h2>
+
+          <img src="Film.jpg" style="width: 100%; height: 440px" data-aos="zoom-in" />
+
+          <h2 data-aos="fade-right">Create New Ticket</h2>
+
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">1</div>
+              <p>
+                The Create Ticket button allows users to raise a new support
+                ticket by submitting issue details such as description,
+                priority, and category. This is the primary entry point for
+                reporting a new problem or service request.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">2</div>
+              <p>
+                The Tickets section displays all created tickets in one place.
+                Users can view ticket status, track progress, and manage their
+                requests efficiently from this section.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">3</div>
+              <p>
+                The Reports section provides analytical insights into ticket
+                data. It helps users and administrators understand trends,
+                performance metrics, and overall service efficiency.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">4</div>
+              <p>
+                The About section gives an overview of the TicketDesk
+                application, its purpose, features, and alignment with IT
+                Service Management (ITSM) practices.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">5</div>
+              <p>
+                The Search Bar allows users to quickly find tickets by
+                entering keywords related to the ticket’s short description,
+                enabling faster access to relevant records.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">6</div>
+              <p>
+                The Priority filter helps users sort and view tickets based on
+                urgency levels such as Low, Medium, or High, ensuring critical
+                issues receive immediate attention.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">7</div>
+              <p>
+                The State filter allows users to filter tickets based on their
+                current status, such as Open, In Progress, or Resolved, making
+                ticket tracking easier.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">8</div>
+              <p>
+                The Create Your First Ticket button is displayed when no
+                tickets exist. It guides new users to start using the system
+                by creating their first support request.
+              </p>
+            </div>
+          </div>
+
+          <img src="Film-5.png" style="width: 100%" data-aos="zoom-in" />
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">1</div>
+              <p>
+                Ticket Number Column Displays unique ticket identifiers (e.g.,
+                TCK-001). Clicking on a ticket number usually opens detailed
+                information about that ticket.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">2</div>
+              <p>
+                Description Column Shows a brief summary of the issue or
+                request reported in each ticket. This helps users quickly
+                identify the nature of the ticket.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">3</div>
+              <p>
+                Priority Filter Dropdown Users can filter tickets by priority
+                level, such as High, Medium, or Low, so they can focus on
+                critical tickets first.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">4</div>
+              <p>
+                State Filter Dropdown Allows filtering tickets by their
+                status: Open, In Progress, Resolved, etc. This aids in
+                monitoring ticket progress and workload.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">5</div>
+              <p>
+                Opened By Column Shows the name of the user who created or
+                submitted the ticket, helping identify ticket ownership.
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">6</div>
+              <p>
+                Opened Date Field Displays the date when a ticket was created.
+                This helps users track ticket history, prioritize work, and
+                monitor how long issues have been pending.
+              </p>
+            </div> <br> <br> <br><br>
+          </div>
+        </div>
+
+        <div id="tech" class="section">
+          <h2 data-aos="fade-right">Ticket Creating</h2>
+
+          <img src="Film2.jpg" style="width: 100%" data-aos="zoom-in" />
+
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">1</div>
+              <p>
+                The breadcrumb navigation ("Tickets > Create Ticket") shows the user's current location in the app and
+                allows quick navigation back to the main Tickets list.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">2</div>
+              <p>
+                The Short Description field is a required text input where users provide a brief, concise summary of
+                the issue or request for quick identification.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">3</div>
+              <p>
+                The Description field is a larger text area for providing detailed information about the issue,
+                including steps to reproduce, error messages, and relevant context.</p>
+              </p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">4</div>
+              <p>
+                The Priority dropdown lets users select the urgency level of the ticket (e.g., Low, Medium, High,
+                Critical) to indicate how quickly it needs attention.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">5</div>
+              <p>
+                The State dropdown sets the initial status of the ticket (typically "Open" for new tickets),
+                indicating its current workflow stage.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">6</div>
+              <p>
+                The Category dropdown allows users to classify the ticket by type (e.g., Hardware, Software, Access
+                Request) for better routing and reporting.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">7</div>
+              <p>
+                The Contact Type dropdown specifies how the request was submitted (e.g., Portal, Email, Phone) for
+                tracking submission channels.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">8</div>
+              <p>
+                The Assigned To field enables users to enter the name or email of the support agent or team member to
+                directly assign the ticket.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">9</div>
+              <p>
+                The Add Attachment option allows users to upload files (e.g., screenshots, logs, documents) relevant
+                to the issue for better troubleshooting.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">10</div>
+              <p>
+                The Preview button provides a preview of how the ticket will appear after creation, helping users
+                review before submission.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">11</div>
+              <p>
+                The Save as Draft button lets users save the partially filled form as a draft to complete and submit
+                later.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">12</div>
+              <p>
+                The Create Ticket button (main action) submits the completed form to officially create and log the new
+                support ticket in the system.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">13</div>
+              <p>
+                The Need Help? section offers quick access to assistance options, including viewing documentation or
+                contacting support for guidance while filling the form.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">14</div>
+              <p>
+                The Cancel button discards any entered information and returns the user to the previous screen
+                (typically the Tickets list) without creating a ticket.</p>
+            </div><br><br> <br><br>
+          </div>
+        </div>
+
+        <div id="team" class="section">
+          <h2 data-aos="fade-right">Ticket Details / Edit</h2>
+
+          <img src="Film-3.png" style="width: 100%; height: 440px" data-aos="zoom-in" />
+
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">1</div>
+              <p>Ticket ID</p>
+              <p>
+                The Ticket ID displays the unique reference number (TCK-002) for the incident. It helps users and
+                support staff easily identify, track, and communicate about the specific ticket.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">2</div>
+              <p>
+                The Quick State Change buttons allow users to instantly update the ticket status to Open, In Progress,
+                Resolved, or Closed, enabling faster workflow transitions without editing the full form.
+              </p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">3</div>
+              <p>
+                The Priority field lets users define the urgency of the ticket (Low, Medium, or High). This helps the
+                support team prioritize issues based on business impact.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">4</div>
+              <p>
+                The Opened By field shows the user who originally raised the ticket. This provides accountability and
+                helps support agents know who to contact for clarification.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">5</div>
+              <p>
+                The Description field allows users to explain the issue in detail. Clear descriptions help support teams
+                understand the problem and provide faster resolutions.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">6</div>
+              <p>
+                The Department field identifies which department the ticket belongs to (e.g., HR). This helps route the
+                ticket to the correct team.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">7</div>
+              <p>
+                The Assigned To field indicates the support agent responsible for resolving the ticket. It ensures clear
+                ownership of the issue.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">8</div>
+              <p>
+                The scroll bar enables users to navigate through long activity logs and notes without losing visibility
+                of the main ticket details.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">9</div>
+              <p>
+                The Add Note button allows users or support staff to add updates, comments, or progress notes to the
+                ticket without changing its core details.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">10</div>
+              <p>
+                The Priority and Status badges provide a quick visual summary of the ticket’s urgency and current state,
+                improving readability at a glance.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">11</div>
+              <p>
+                The Opened Date shows when the ticket was created. This helps track response time and resolution
+                timelines.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">12</div>
+              <p>
+                The Category field classifies the ticket type (e.g., Hardware). Proper categorization improves reporting
+                and issue analysis.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">13</div>
+              <p>
+                The date picker icon allows users to easily select or modify the opened date using a calendar view.</p>
+            </div>
+            <div class="step-row" data-aos="fade-right">
+              <div class="num-circle">14</div>
+              <p>
+                The Update Ticket button saves all changes made to the ticket and updates the system with the latest
+                information.</p>
+            </div>
+            <br />
+            <img src="Film-6.png" alt="Incident Details Image" style="width: 100%" />
+            <h2>Incident Details Page</h2>
+            <div style="display:flex; flex-direction: column;gap: 20px; ">
+              <div class="step-row">
+                <div class="num-circle">1</div>
+                <p>
+                  The confirmation alert notifies the user that the ticket has been updated successfully, ensuring
+                  feedback and confirmation of the action performed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="Dashboard" class="section">
+          <h2 data-aos="fade-right">Dashboard / Reports</h2>
+
+          <img src="F3.png" style="width: 100%; height: 420px" data-aos="zoom-in" />
+          <p>This Bargraph will be applied based on State</p> <br>
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">1</div>
+              <p>
+                The Total Tickets card displays the total number of tickets created in the system, giving a quick
+                overview of overall ticket volume.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">2</div>
+              <p>
+                The Tickets by Status summary lists ticket counts based on their current state (Open, In Progress,
+                Resolved, Closed), helping track workload distribution.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">3</div>
+              <p>
+                The Tickets by Status bar chart visually represents ticket status data, making it easier to analyze
+                trends and service performance.</p>
+            </div>
+          </div>
+
+          <img src="pg4.png" style="width: 100%" data-aos="zoom-in" />
+          <p>This Piechart will be applied based on Priority</p>
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">1</div>
+              <p>
+                The Tickets by Priority summary shows the number of tickets under High, Medium, and Low priority
+                categories, helping teams understand urgency distribution.</p>
+            </div>
+            <div data-aos="fade-right" class="step-row">
+              <div class="num-circle">2</div>
+              <p>
+                The Priority pie chart provides a visual breakdown of tickets by priority, enabling quick insights into
+                which urgency level dominates the workload.</p>
+            </div> <br> <br><br><br>
+          </div>
+        </div>
+        <div id="snow" class="section">
+          <h2>ServiceNow Alignment</h2>
+
+          <div class="snow-grid">
+
+            <a class="sn" href="https://www.servicenow.com">
+              <div class="snow-card">
+                <i class="fa-solid fa-gears"></i>
+                <span >ServiceNow Official Website</span>
+              </div>
+            </a>
+
+            <a class="sn" href="https://developer.servicenow.com">
+              <div class="snow-card">
+                <i class="fa-solid fa-briefcase"></i>
+                <span >ServiceNow Developer Portal</span>
+              </div>
+            </a>
+
+            <a class="sn" href="https://docs.servicenow.com">
+              <div class="snow-card">
+                <i class="fa-solid fa-book"></i>
+                <span >ServiceNow Documentation</span>
+              </div>
+            </a>
+
+            <a class="sn" href="https://community.servicenow.com">
+              <div class="snow-card">
+                <i class="fa-solid fa-headset"></i>
+                <span >ServiceNow Community</span>
+              </div>
+            </a>
+
+            <a class="sn" href="https://www.servicenow.com/products/it-service-management.html">
+              <div class="snow-card">
+                <i class="fa-solid fa-sliders"></i>
+                <span >IT Service Management (ITSM)</span>
+              </div>
+            </a>
+
+            <a class="sn" href="https://www.servicenow.com/products/customer-service-management.html">
+              <div class="snow-card">
+                <i class="fa-solid fa-link"></i>
+                <span >Customer Service Management (CSM)</span>
+              </div>
+            </a>
+
+            <a class="sn" href="https://www.servicenow.com/services/training-and-certification.html">
+              <div class="snow-card">
+                <i class="fa-solid fa-user-check"></i>
+                <span >Training & Certification</span>
+              </div>
+            </a>
+
+            <a class="sn" href="https://www.servicenow.com/community/now-support-forum/bd-p/community">
+              <div class="snow-card">
+                <i class="fa-solid fa-link"></i>
+                <span >Now Support Forum</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+<div class="chatbot-container">
+  <div class="chatbot-btn" onclick="toggleChatbot()">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <div class="chatbot-box" id="chatbotBox">
+    <div class="chatbot-header">
+      <span>TicketDesk Bot</span>
+      <i class="fa-solid fa-xmark" onclick="toggleChatbot()"></i>
+    </div>
+
+    <div class="chatbot-body" id="chatBody">
+      <div class="bot-msg">👋 Hi! Ask me about tickets or SNOW.</div>
+    </div>
+
+    <div class="chatbot-footer">
+      <input id="chatInput" placeholder="Type a message...">
+      <button onclick="sendMsg()"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="../JS/about.js"></script>
 </body>
 </html>
