@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 function getLoggedInUser() {
     try {
         const user = JSON.parse(localStorage.getItem("loggedInUser")) || {};
@@ -187,4 +185,4 @@ renderTickets();
 setActiveNav();
 
 
->>>>>>> 99d2ab74e379ac51a1a22d14d55bef575f5e4124
+
