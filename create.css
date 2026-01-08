@@ -1,0 +1,154 @@
+body {
+  background-color: #f8f9fb;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  font-size: 14px; /* default paragraph size */
+}
+ 
+/* Headings */
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+ 
+/* Paragraphs */
+p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+ 
+/* Labels */
+label {
+  font-size: 13px;
+  font-weight: 500;
+}
+ 
+/* Logo */
+.logo {
+  font-size: 20px;
+}
+ 
+/* Layout */
+.page-wrapper {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+ 
+/* Card */
+.card {
+  border-radius: 6px; /* changed */
+  border: 1px solid #e5e7eb;
+}
+ 
+/* Grid */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+ 
+/* Inputs */
+.form-control,
+.form-select {
+  border-radius: 6px; /* changed */
+  height: 44px;
+  font-size: 14px;
+}
+ 
+textarea.form-control {
+  height: auto;
+}
+ 
+/* Action bar */
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+/* Buttons */
+.btn-primary {
+  background-color: #2563eb;
+  border-radius: 6px; /* changed */
+  font-size: 14px;
+}
+ 
+/* Help box */
+.help-box {
+  background: #eef4ff;
+  border-radius: 6px; /* changed */
+  padding: 20px;
+}
+ 
+.help-box a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+ 
+a {
+  text-decoration: none;
+}
+ 
+/* Date input */
+input[type="date"] {
+  padding-right: 12px;
+}
+ 
+/* User logo */
+.user-logo {
+  width: 32px;
+  height: 32px;
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+ 
+@media (max-width: 768px) {
+  /* Stack header content */
+  .header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+ 
+  /* Buttons move below & stay on same line */
+  .action-buttons {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+ 
+  /* Smaller buttons for mobile */
+  .action-buttons .btn {
+    flex: 1;
+    height: 36px;
+    font-size: 13px;
+    padding: 6px 8px;
+    white-space: nowrap;
+  }
+ 
+  .action-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+ 
+  .ticket-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+ 
+}
+ 
+ 
+ 
+   
+ 
+ 

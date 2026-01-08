@@ -1,0 +1,305 @@
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+ 
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fb;
+}
+ 
+/* SIDEBAR   */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+}
+ 
+.sidebar h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2563eb;
+  margin-bottom: 30px;
+}
+ 
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+ 
+.nav-item i {
+  color: #6b7280;
+}
+ 
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+}
+ 
+.nav-item:hover,
+.nav-item.active {
+  background: #eef4ff;
+  color: #2563eb;
+  font-weight: 700;
+}
+ 
+.nav-item:hover i,
+.nav-item.active i {
+  color: #2563eb;
+}
+ 
+.sidebar .logout {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+ 
+.sidebar .logout:hover {
+  background: #dc2626;
+}
+ 
+.sidebar .logout a,
+.sidebar .logout i {
+  color: #fff;
+}
+ 
+/* MAIN / TOPBAR */
+.main {
+  flex: 1;
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 220px;
+  right: 0;
+  padding: 15px 25px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 20;
+}
+ 
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+ 
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #dbe7ff;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+ 
+/* CONTENT */
+.content {
+  padding: 25px;
+  margin-top: 70px;
+}
+ 
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+ 
+.controls input,
+.controls select {
+  min-width: 200px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+ 
+.create-btn {
+  margin-left: auto;
+  padding: 10px 16px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+ 
+.create-btn:hover {
+  background: #1d4ed8;
+}
+ 
+/* SEARCH */
+.search-box {
+  position: relative;
+  width: 320px;
+}
+ 
+.search-box i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+ 
+.search-box input {
+  width: 100%;
+  padding-left: 36px;
+}
+ 
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+ 
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+ 
+th {
+  background: #f8f9fb;
+  font-weight: 700;
+}
+ 
+tbody tr:nth-child(even) {
+  background: #f5f6f8;
+}
+ 
+tbody tr {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+ 
+tbody tr:hover {
+  background: #eef4ff;
+  transform: scale(1.01);
+}
+ 
+/* EMPTY STATE */
+.empty-state {
+  padding: 60px 20px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+ 
+/* MOBILE MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: auto;
+}
+ 
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #1f2937;
+}
+ 
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
+}
+ 
+.mobile-nav-item {
+  padding: 14px 20px;
+  font-weight: 600;
+}
+ 
+.mobile-nav-item:hover {
+  background: #eef4ff;
+  color: #2563eb;
+}
+ 
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  .topbar { left: 0; padding: 12px 16px; }
+  .hamburger { display: flex; }
+  .controls { flex-direction: column; }
+  .search-box,
+  .controls input,
+  .controls select,
+  .create-btn { width: 100%; }
+ 
+  table, thead, tbody, tr, td {
+    display: block;
+  }
+ 
+  thead { display: none; }
+ 
+  tbody tr {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+  }
+ 
+  td {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 6px;
+    border: none;
+    padding: 6px 0;
+  }
+ 
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+  }
+}
