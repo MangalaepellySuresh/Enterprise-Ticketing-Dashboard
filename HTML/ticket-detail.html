@@ -1,11 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>INC0005 – Incident Details</title>
+ 
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+  <!-- Font Awesome (cdnjs) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+ 
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+  <link rel="stylesheet" href="../CSS/ticket-detail.css" />
 </head>
+ 
 <body>
-    
+ 
+<!-- HEADER -->
+<header class="topbar">
+  <div class="title">
+    <div class="hi"><a href="../HTML/ticket-list.html"><i class="fa-solid fa-arrow-left"></i></a>
+      <div><h1>INC0005</h1>
+    <p>Email not working</p>
+    </div>
+    </div>
+  </div>
+ 
+  <div class="badges">
+    <span class="badge red">
+      <i class="fa-solid fa-triangle-exclamation"></i> High Priority
+    </span>
+    <span class="badge blue">
+     <i class="fa-solid fa-clock"></i> In Progress
+    </span>
+ 
+  </div>
+</header>
+ 
+<!-- MAIN -->
+<main class="container">
+ 
+  <!-- LEFT PANEL -->
+  <section class="card form-card">
+    <h2>Quick State Change</h2>
+ 
+   
+<div class="state-buttons">
+  <button class="pill" data-state="Open">
+    <i class="fa-regular fa-folder-open"></i> Open
+  </button>
+ 
+  <button class="pill active" data-state="In Progress">
+    <i class="fa-solid fa-play"></i> In Progress
+  </button>
+ 
+  <button class="pill" data-state="Resolved">
+    <i class="fa-solid fa-circle-check"></i> Resolved
+  </button>
+ 
+  <button class="pill" data-state="Closed">
+    <i class="fa-solid fa-lock"></i> Close
+  </button>
+</div>
+ 
+ 
+ 
+    <form>
+      <div class="row two">
+        <div class="field">
+          <label>Short Description</label>
+          <input type="text" value=" ">
+        </div>
+        <div class="field">
+          <label>Opened by</label>
+          <input type="text" value=" ">
+        </div>
+      </div>
+ 
+      <div class="row three">
+        <div class="field">
+          <label>Priority</label>
+          <select>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Category</label>
+          <select><option>Hardware</option>
+          <option>Software</option>
+        <option>email</option>
+      <option>Network</option></select>
+        </div>
+        <div class="field">
+          <label>Assigned To</label>
+          <select><option>Unassigned</option></select>
+        </div>
+      </div>
+ 
+      <div class="row one">
+        <div class="field">
+          <label>Description</label>
+          <textarea>
+User is unable to send or receive emails since yesterday morning. Error message appears when trying to connect to mail server. Issue affects Outlook desktop client and webmail access.
+          </textarea>
+        </div>
+      </div>
+ 
+      <div class="row two">
+        <div class="field">
+          <label>Opened Date</label>
+          <div class="input-icon">
+            <i class="fa-regular fa-calendar"></i>
+            <input type="date" value="">
+          </div>
+        </div>
+        <div class="field">
+          <label>Department</label>
+          <select>
+            <option>IT</option>
+            <option >HR</option>
+          </select>
+        </div>
+      </div>
+ 
+      <div class="actions">
+        <button type="button" class="btn secondary">Cancel</button>
+       <a href="../HTML/ticket-list.html"> <button type="button" class="btn primary">
+          <i class="fa-solid fa-floppy-disk"></i> Update Ticket
+        </button></a>
+      </div>
+    </form>
+  </section>
+ 
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Activity & Notes</h3>
+ 
+    <div class="activity">
+      <div class="entry">
+        <i class="fa-solid fa-user avatar"></i>
+        <div>
+          <strong>Sarah Wilson</strong>
+          <span>2 hours ago</span>
+          <p>Assigned ticket to myself and started investigation. Checking mail server logs.</p>
+        </div>
+      </div>
+ 
+      <div class="entry system">
+        <i class="fa-solid fa-gear avatar"></i>
+        <div>
+          <strong>System</strong>
+          <span>3 hours ago</span>
+          <p>Priority changed from Medium to High</p>
+        </div>
+      </div>
+ 
+      <div class="entry">
+        <i class="fa-solid fa-user avatar"></i>
+        <div>
+          <strong>John Doe</strong>
+          <span>4 hours ago</span>
+          <p>Ticket created. Issue started yesterday morning, affects both desktop and web email access.</p>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="add-note">
+      <p>Add Note</p>
+      <textarea placeholder="Add a note or update..."></textarea>
+      <button class="btn primary full">
+        Add Note
+      </button>
+    </div>
+  </aside>
+ 
+</main>
+ 
+  <script src="../JS/icket-detail.js"></script>
+ 
 </body>
 </html>
