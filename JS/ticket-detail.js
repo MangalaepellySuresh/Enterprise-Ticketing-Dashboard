@@ -1,26 +1,20 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* =========================
-     GET TICKET
-  ========================= */
+ 
+  /* GET TICKET */
   const params = new URLSearchParams(window.location.search);
   const ticketNumber = params.get("ticket");
-
+ 
   const tickets = JSON.parse(localStorage.getItem("tickets")) || [];
   const ticket = tickets.find(t => t.number === ticketNumber);
-
+ 
   if (!ticket) {
     alert("Ticket not found");
-    window.location.href = "../HTML/ticket-list.html";
+    window.location.href = "ticket-list.html";
     return;
   }
-
-  
-  /* =========================
-     NORMALIZE DATA
-  ========================= */
-  ticket.shortDescription ||= ticket.description || "";
+ 
+  /* NORMALIZE DATA */
+  ticket.shortDescription ||=  "";
   ticket.description ||= "";
   ticket.openedBy ||= "Unknown";
   ticket.priority ||= "Low";
@@ -29,49 +23,41 @@ document.addEventListener("DOMContentLoaded", () => {
   ticket.department ||= "IT Department";
   ticket.state ||= "Open";
   ticket.activity ||= [];
-
-  /* =========================
-     ELEMENTS
-  ========================= */
+ 
+  /* ELEMENTS */
   const headerId = document.querySelector(".topbar h1");
   const headerSubject = document.querySelector(".topbar p");
   const priorityBadge = document.querySelector(".badge.red");
   const stateBadge = document.querySelector(".badge.blue");
-
+ 
   const inputs = document.querySelectorAll(".field input");
   const selects = document.querySelectorAll(".field select");
   const textarea = document.querySelector(".field textarea");
-
+ 
   const activityFeed = document.querySelector(".activity");
   const stateButtons = document.querySelectorAll(".pill");
   const noteBtn = document.querySelector(".add-note button");
   const noteArea = document.querySelector(".add-note textarea");
   const updateBtn = document.querySelector(".actions .btn.primary");
-
-  /* =========================
-     FORM MAP (KEY FIX)
-  ========================= */
+ 
+  /* FORM MAP (KEY FIX) */
   const formMap = {
     shortDescription: inputs[0],
     openedBy: inputs[1],
+    openedDate: inputs[2],
     priority: selects[0],
     category: selects[1],
     assignedTo: selects[2],
-    description: textarea,
-    openedDate: inputs[2],
-    department: selects[3]
+    department: selects[3],
+    description: textarea
   };
-
-  /* =========================
-     HEADER
-  ========================= */
+ 
+  /* HEADER */
   headerId.textContent = ticket.number;
   headerSubject.textContent = ticket.shortDescription;
-  document.title = `${ticket.number} – ${ticket.shortDescription}`;
-
-  /* =========================
-     POPULATE FORM
-  ========================= */
+  document.title = `${ticket.number} - ${ticket.shortDescription}`;
+ 
+  /* POPULATE FORM */
   Object.entries(formMap).forEach(([key, el]) => {
     if (!el) return;
     if (key === "openedDate") {
@@ -80,15 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
       el.value = ticket[key] || "";
     }
   });
-
-  /* =========================
-     🔥 DYNAMIC SELECT VALUE FIX
-  ========================= */
+ 
+  /* DYNAMIC SELECT VALUE FIX */
   ["priority", "category", "assignedTo", "department"].forEach(field => {
     const select = formMap[field];
     const value = ticket[field];
     if (!select || !value) return;
-
+ 
     const exists = [...select.options].some(o => o.value === value);
     if (!exists) {
       const opt = document.createElement("option");
@@ -98,10 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     select.value = value;
   });
-
-  /* =========================
-     BADGES
-  ========================= */
+ 
+  /* BADGES */
   function syncBadges() {
     priorityBadge.innerHTML =
       `<i class="fa-solid fa-triangle-exclamation"></i> ${ticket.priority} Priority`;
@@ -109,27 +91,25 @@ document.addEventListener("DOMContentLoaded", () => {
       `<i class="fa-solid fa-clock"></i> ${ticket.state}`;
   }
   syncBadges();
-
+ 
   function saveTickets() {
     localStorage.setItem("tickets", JSON.stringify(tickets));
   }
-  function getLoggedInUser() {
-  try {
-    const user = JSON.parse(localStorage.getItem("loggedInUser")) || {};
-    return {
-      name: user.name || user.fullName || user.username || "Guest User",
-      role: user.role || user.userRole || "End User",
-    };
-  } catch {
-    return { name: "Guest User", role: "End User" };
-  }
-}
  
-const loggedInUser = getLoggedInUser();
-
-  /* =========================
-     ACTIVITY
-  ========================= */
+  function getLoggedInUser() {
+    try {
+      const user = JSON.parse(localStorage.getItem("loggedInUser")) || {};
+      return {
+        name: user.name || user.fullName || user.username || "Guest User",
+        role: user.role || user.userRole || "End User",
+      };
+    } catch {
+      return { name: "Guest User", role: "End User" };
+    }
+  }
+  const loggedInUser = getLoggedInUser();
+ 
+  /* ACTIVITY */
   function renderActivity() {
     activityFeed.innerHTML = "";
     ticket.activity.slice().reverse().forEach(a => {
@@ -145,7 +125,7 @@ const loggedInUser = getLoggedInUser();
       `);
     });
   }
-
+ 
   function addActivity(user, message, isSystem = false) {
     ticket.activity.push({
       user,
@@ -156,16 +136,14 @@ const loggedInUser = getLoggedInUser();
     saveTickets();
     renderActivity();
   }
-
+ 
   renderActivity();
-
-  /* =========================
-     QUICK STATE (FULLY FIXED)
-  ========================= */
+ 
+  /* QUICK STATE (FULLY FIXED) */
   function syncState(state) {
     stateButtons.forEach(btn => {
       btn.classList.remove("active", "open", "progress", "resolved", "closed");
-
+ 
       if (btn.dataset.state === state) {
         btn.classList.add("active");
         if (state === "Open") btn.classList.add("open");
@@ -174,70 +152,64 @@ const loggedInUser = getLoggedInUser();
         if (state === "Closed") btn.classList.add("closed");
       }
     });
-
+ 
     syncBadges();
   }
-
+ 
   syncState(ticket.state);
-
+ 
   stateButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const newState = btn.dataset.state;
       if (ticket.state === newState) return;
-
+ 
       ticket.state = newState;
       syncState(newState);
       addActivity("System", `State changed to ${newState}`, true);
       saveTickets();
     });
   });
-
-  /* =========================
-     FIELD CHANGES (🔥 DYNAMIC)
-  ========================= */
+ 
+  /* FIELD CHANGES (DYNAMIC) */
   Object.entries(formMap).forEach(([key, el]) => {
     let oldValue = el.value;
-
+ 
     el.addEventListener("change", () => {
       if (oldValue === el.value) return;
-
+ 
       ticket[key] = el.value;
-
+ 
       if (key === "shortDescription") {
         headerSubject.textContent = el.value;
         document.title = `${ticket.number} – ${el.value}`;
       }
-
+ 
       if (key === "priority") syncBadges();
-
+ 
       addActivity(
         "System",
         `${key.replace(/([A-Z])/g, " $1")} changed from "${oldValue}" to "${el.value}"`,
         true
       );
-
+ 
       oldValue = el.value;
       saveTickets();
     });
   });
-
-  /* =========================
-     ADD NOTE
-  ========================= */
+ 
+  /* ADD NOTE */
   noteBtn.addEventListener("click", () => {
     const text = noteArea.value.trim();
     if (!text) return;
     addActivity(loggedInUser.name, text);
     noteArea.value = "";
   });
-
-  /* =========================
-     UPDATE BUTTON
-  ========================= */
+ 
+  /* UPDATE BUTTON */
   updateBtn.addEventListener("click", () => {
     saveTickets();
     addActivity("System", "Incident updated", true);
     alert("Ticket updated successfully");
   });
-
+ 
 });
