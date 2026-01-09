@@ -14,6 +14,7 @@ function getLoggedInUser() {
    document.getElementById("userLogo").textContent = loggedInUser.name.charAt(0);
 
    let attachment = null;
+   
 function openAttachmentPicker()
  {
   document.getElementById("attachmentInput").click();
@@ -153,7 +154,7 @@ function openPreview() {
   }
   document.getElementById("previewBody").innerHTML = html;
   new bootstrap.Modal(document.getElementById("previewModal")).show();
-}
+} 
  
 // Add form submit listener
 document.getElementById("ticketForm").addEventListener("submit", function(e)
