@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Register | Mini Service Desk</title>
+  <link rel="stylesheet" href="../CSS/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
-<body>
-    
+
+<body class="page-register">
+  <div class="auth-card">
+    <div class="icon">
+      <i class="fa-solid fa-headset"></i>
+    </div>
+
+    <h2>Mini Service Desk Portal</h2>
+    <p class="subtitle">Create your account</p>
+
+    <form id="registerForm" autocomplete="off">
+
+      <label>Full Name</label>
+      <input type="text" id="name">
+      <div class="error" id="nameError"></div>
+
+      <label>Email</label>
+      <input type="email" id="regEmail">
+      <div class="error" id="regEmailError"></div>
+
+      <label>Password</label>
+      <input type="password" id="regPassword">
+      <div class="error" id="regPasswordError"></div>
+
+      <div id="passwordRules" class="hidden">
+        <p id="r1"><i class="fa-solid fa-xmark rule-icon"></i><span class="rule-text">Minimum 8 characters</span></p>
+        <p id="r2"><i class="fa-solid fa-xmark rule-icon"></i><span class="rule-text">One uppercase letter</span></p>
+        <p id="r3"><i class="fa-solid fa-xmark rule-icon"></i><span class="rule-text">One lowercase letter</span></p>
+        <p id="r4"><i class="fa-solid fa-xmark rule-icon"></i><span class="rule-text">One number</span></p>
+        <p id="r5"><i class="fa-solid fa-xmark rule-icon"></i><span class="rule-text">One special character
+            (@$!%*?&)</span></p>
+      </div>
+
+      <label>Confirm Password</label>
+      <input type="password" id="confirmPassword">
+      <div class="error" id="confirmError"></div>
+
+      <label>Department</label>
+      <input type="text" id="department">
+      <div class="error" id="deptError"></div>
+
+      <label>Role</label>
+      <select id="regRole">
+        <option value="">Select role</option>
+        <option value="System Administrator">System Administrator</option>
+        <option value="Support Agent">Admin</option>
+        <option value="Admin">ITIL</option>
+      </select>
+      <div class="error" id="roleError"></div>
+
+      <button type="submit">Register</button>
+
+      <p class="auth-link">
+        Already registered? <a href="login.html">Login</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="../JS/login.js"></script>
 </body>
+
 </html>

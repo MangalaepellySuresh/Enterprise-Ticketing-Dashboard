@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+      <title>Login | Mini Service Desk</title>
+      <link rel="stylesheet" href="../CSS/login.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
-<body>
-    
+
+<body class="page-login">
+      <div class="auth-card">
+            <div class="icon">
+                  <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h2>Mini Service Desk Portal</h2>
+            <p class="subtitle">Log and track your IT issues</p>
+            <form id="loginForm" autocomplete="off">
+
+                  <label>Email</label>
+                  <input type="email" id="loginEmail">
+                  <div class="error" id="loginEmailError"></div>
+
+                  <label>Password</label>
+                  <input type="password" id="loginPassword">
+                  <div class="error" id="loginPasswordError"></div>
+
+                  <label>Role</label>
+                  <select id="loginRole">
+                        <option value="">Select role</option>
+                        <option value="System Administrator">System Administrator</option>
+                        <option value="Support Agent">Admin</option>
+                        <option value="Admin">ITIL</option>
+                  </select>
+                  <div class="error" id="loginRoleError"></div>
+
+                  <button type="submit">Enter Portal</button>
+
+                  <p class="auth-link">
+
+                        New user? <a href="register.html">Register here</a>
+                  </p>
+            </form>
+      </div>
+
+      <script src="../JS/login.js"></script>
 </body>
+
 </html>
