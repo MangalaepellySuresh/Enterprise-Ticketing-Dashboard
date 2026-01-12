@@ -132,7 +132,7 @@ function submitTicket(e) {
   const tickets = JSON.parse(localStorage.getItem("tickets")) || [];
   tickets.unshift(buildTicket(false));
   localStorage.setItem("tickets", JSON.stringify(tickets));
-  window.location.href = "ticket-list.html";
+  window.location.href = "../HTML/ticket-list.html";
 }
 // Preview
 function openPreview() {
