@@ -128,7 +128,7 @@ const handleRegister = (event) => {
 
   users.push({ name, email, password, department: dept, role });
   saveUsers(users);
-  window.location.href = "login.html";
+  window.location.href = "../HTML/login.html";
 };
 
 const handleLogin = (event) => {
@@ -173,7 +173,7 @@ const handleLogin = (event) => {
   } if (!user.ac)
 
     localStorage.setItem("loggedInUser", JSON.stringify(user));
-  window.location.href = "tickets.html";
+  window.location.href = "../HTML/ticket-list.html";
 };
 
 document.addEventListener("DOMContentLoaded", () => {
