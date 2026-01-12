@@ -1,4 +1,3 @@
-/* GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +11,6 @@ body {
   background: #f8f9fb;
 }
  
-/*SIDEBAR */
 .sidebar {
   width: 220px;
   height: 100vh;
@@ -88,7 +86,6 @@ body {
   color: #fff;
 }
  
-/*MAIN / TOPBAR */
 .main {
   flex: 1;
   margin-left: 220px;
@@ -128,7 +125,6 @@ body {
   font-weight: 700;
 }
  
-/* CONTENT */
 .content {
   padding: 25px;
   margin-top: 70px;
@@ -164,7 +160,6 @@ body {
   background: #1d4ed8;
 }
  
-/* SEARCH */
 .search-box {
   position: relative;
   width: 320px;
@@ -183,7 +178,6 @@ body {
   padding-left: 36px;
 }
  
-/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -197,6 +191,13 @@ th, td {
   border-bottom: 1px solid #e5e7eb;
   font-size: 14px;
 }
+
+th:nth-child(1), td:nth-child(1) { text-align: left; } /* Number */
+th:nth-child(2), td:nth-child(2) { text-align: left; } /* Description */
+th:nth-child(3), td:nth-child(3) { text-align: center; } /* State */
+th:nth-child(4), td:nth-child(4) { text-align: center; } /* Priority */
+th:nth-child(5), td:nth-child(5) { text-align: left; } /* Opened By */
+th:nth-child(6), td:nth-child(6) { text-align: center; } /* Opened Date */
  
 th {
   background: #f8f9fb;
@@ -216,8 +217,6 @@ tbody tr:hover {
   background: #eef4ff;
   transform: scale(1.01);
 }
- 
-/* EMPTY STATE */
 .empty-state {
   padding: 60px 20px;
   background: #fff;
@@ -225,8 +224,6 @@ tbody tr:hover {
   text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
- 
-/* MOBILE MENU */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -262,8 +259,6 @@ tbody tr:hover {
   background: #eef4ff;
   color: #2563eb;
 }
- 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   body { flex-direction: column; }
   .sidebar { display: none; }
@@ -303,5 +298,3 @@ tbody tr:hover {
     color: #6b7280;
   }
 }
- 
- 
